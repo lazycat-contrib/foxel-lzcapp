@@ -27,3 +27,14 @@ services:
             - /lzcapp/var/data:/app/data
         setup_script: |
             mkdir -p /app/data/db
+
+locales:
+    zh:
+        name: "Foxel"
+        description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
+    zh_CN:
+        name: "Foxel"
+        description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
+    en:
+        name: "Foxel"
+        description: "A highly extensible private cloud storage solution for individuals and teams, featuring AI-powered semantic search."
