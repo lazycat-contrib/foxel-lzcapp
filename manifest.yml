@@ -1,40 +1,40 @@
 name: Foxel
 package: community.lazycat.app.foxel
-version: 1.2.5
+version: 1.2.8
 min_os_version: 1.3.8
 description: 一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索。
 homepage: https://github.com/DrizzleTime/Foxel
 author: DrizzleTime
 application:
-    subdomain: foxel
-    background_task: true
-    public_path:
-        - /
+  subdomain: foxel
+  background_task: true
+  public_path:
+    - /
 
-    upstreams:
-        - location: /
-          backend: http://foxel:80/
+  upstreams:
+    - location: /
+      backend: http://foxel:80/
 services:
-    foxel:
-        container_name: foxel
-        # ghcr.io/drizzletime/foxel:v1.2.5
-        image: registry.lazycat.cloud/czyt/drizzletime/foxel:7864e70185752988
-        environment:
-            - TZ=Asia/Shanghai
-            - SECRET_KEY={{stable_secret "foxel#secret_key"}}
-            - TEMP_LINK_SECRET_KEY={{stable_secret "foxel#temp_link_secret_key"}}
-        binds:
-            - /lzcapp/var/data:/app/data
-        setup_script: |
-            mkdir -p /app/data/db
+  foxel:
+    container_name: foxel
+    # ghcr.io/drizzletime/foxel:v1.2.8
+    image: https://xget.xi-xu.me/cr/ghcr/drizzletime/foxel:v1.2.8
+    environment:
+      - TZ=Asia/Shanghai
+      - SECRET_KEY={{stable_secret "foxel#secret_key"}}
+      - TEMP_LINK_SECRET_KEY={{stable_secret "foxel#temp_link_secret_key"}}
+    binds:
+      - /lzcapp/var/data:/app/data
+    setup_script: |
+      mkdir -p /app/data/db
 
 locales:
-    zh:
-        name: "Foxel"
-        description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
-    zh_CN:
-        name: "Foxel"
-        description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
-    en:
-        name: "Foxel"
-        description: "A highly extensible private cloud storage solution for individuals and teams, featuring AI-powered semantic search."
+  zh:
+    name: "Foxel"
+    description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
+  zh_CN:
+    name: "Foxel"
+    description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
+  en:
+    name: "Foxel"
+    description: "A highly extensible private cloud storage solution for individuals and teams, featuring AI-powered semantic search."
