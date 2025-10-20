@@ -1,6 +1,6 @@
 name: Foxel
 package: community.lazycat.app.foxel
-version: 1.3.1
+version: 1.3.2
 min_os_version: 1.3.8
 description: 一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索。
 homepage: https://github.com/DrizzleTime/Foxel
@@ -17,8 +17,8 @@ application:
 services:
   foxel:
     container_name: foxel
-    # ghcr.io/drizzletime/foxel:v1.3.1
-    image: ghcr.nju.edu.cn/drizzletime/foxel:v1.3.1
+    # ghcr.io/drizzletime/foxel:v1.3.2
+    image: ghcr.nju.edu.cn/drizzletime/foxel:v1.3.2
     environment:
       - TZ=Asia/Shanghai
       - SECRET_KEY={{stable_secret "foxel#secret_key"}}
