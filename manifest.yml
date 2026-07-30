@@ -3,14 +3,14 @@ application:
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://foxel:80/
 services:
   foxel:
     # ghcr.io/drizzletime/foxel:v1.4.0
-    image: ghcr.1ms.run/drizzletime/foxel:v1.4.0
+    # upstream: ghcr.io/drizzletime/foxel:v2.2.2
+    image: ghcr.1ms.run/drizzletime/foxel:v2.2.2
     environment:
       - TZ=Asia/Shanghai
       - SECRET_KEY={{stable_secret "foxel#secret_key"}}
