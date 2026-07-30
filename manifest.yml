@@ -18,7 +18,7 @@ services:
   foxel:
     container_name: foxel
     # ghcr.io/drizzletime/foxel:v1.4.0
-    image: ghcr.nju.edu.cn/drizzletime/foxel:v1.4.0
+    image: ghcr.1ms.run/drizzletime/foxel:v1.4.0
     environment:
       - TZ=Asia/Shanghai
       - SECRET_KEY={{stable_secret "foxel#secret_key"}}
