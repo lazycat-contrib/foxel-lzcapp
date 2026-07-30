@@ -1,10 +1,3 @@
-name: Foxel
-package: community.lazycat.app.foxel
-version: 1.4.0
-min_os_version: 1.3.8
-description: 一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索。
-homepage: https://github.com/DrizzleTime/Foxel
-author: DrizzleTime
 application:
   subdomain: foxel
   background_task: true
@@ -16,7 +9,6 @@ application:
       backend: http://foxel:80/
 services:
   foxel:
-    container_name: foxel
     # ghcr.io/drizzletime/foxel:v1.4.0
     image: ghcr.1ms.run/drizzletime/foxel:v1.4.0
     environment:
@@ -27,14 +19,3 @@ services:
       - /lzcapp/var/data:/app/data
     setup_script: |
       mkdir -p /app/data/db
-
-locales:
-  zh:
-    name: "Foxel"
-    description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
-  zh_CN:
-    name: "Foxel"
-    description: "一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索"
-  en:
-    name: "Foxel"
-    description: "A highly extensible private cloud storage solution for individuals and teams, featuring AI-powered semantic search."

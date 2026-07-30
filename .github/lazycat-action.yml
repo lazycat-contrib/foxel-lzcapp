@@ -1,0 +1,44 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/application.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: foxel
+
+build:
+  toolchains: []
+  run_buildscript: false
+
+images:
+  - id: foxel
+    target: service
+    service: foxel
+    source: ghcr.io/drizzletime/foxel
+    channel: stable
+    tag_regex: '^v[0-9]+\.[0-9]+\.[0-9]+$'
+    version_regex: '^v(?P<version>[0-9]+\.[0-9]+\.[0-9]+)$'
+    delivery:
+      mode: mirror
+      image_template: ghcr.1ms.run/drizzletime/foxel:{tag}
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+    skip_if_version_exists: false
+    retry:
+      enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Foxel
+    summary: "Foxel LazyCat package published from GitHub Actions."
