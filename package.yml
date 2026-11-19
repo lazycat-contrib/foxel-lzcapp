@@ -1,6 +1,6 @@
 package: community.lazycat.app.foxel
 license: MIT
-version: 2.2.2
+version: 2.4.0
 name: Foxel
 description: 一个面向个人和团队的、高度可扩展的私有云盘解决方案，支持 AI 语义搜索。
 homepage: https://github.com/DrizzleTime/Foxel
